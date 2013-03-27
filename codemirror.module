@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implements hook_wysiwyg_plugin().
+ */
+function codemirror_wysiwyg_plugin($editor, $version) {
+  if ($editor == 'ckeditor') {
+    return array(
+      'codemirror' => array(
+         'extensions' => array(
+           'codemirror' => t('CodeMirror')
+         ),
+         'path' => wysiwyg_get_path('ckeditor') . '/plugins/codemirror',
+         'internal' => FALSE,
+         'load' => TRUE,
+      ),
+    );
+  }
+}
+?>
